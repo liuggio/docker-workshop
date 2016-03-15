@@ -1,0 +1,5 @@
+upstream server {
+    {{range service "bash_server" "any"}}
+        server {{.Address}}:{{.Port}};
+    {{end}}
+}
